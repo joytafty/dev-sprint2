@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Executor </title>
+	</head>
+	<body> 
+		<br>
+		<center> Enter Python Code to Execute: </center>
+		<br>
+		<form action="/" method="post">
+			<center>
+				<input type="text" name="expression" />
+				<input type="submit" value="Execute" />
+			</center>
+		</form>
+		<center>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<br>
+				Results:
+				<pre>
+					{% for message in messages %}
+{{message}}
+					{% endfor %}
+				</pre>
+				{% endif %}
+			{% endwith %}
+		</center>
+	</body>
+</html>

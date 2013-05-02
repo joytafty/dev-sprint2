@@ -1,7 +1,7 @@
 # Please put answers for the week2 stand alone questions here
 # Name: Tharathorn (Joy) Rimchala
 
-# Ex 6.8.1
-# What happens if you call 'middle' with a string with two, one, no letters 
-# 
-# 
+# My three awesome apps
+# 1. Web app for accessing origamis in my remote inventory
+# 2. Web app for accessing my favorite pins in my pinterest page
+# 3. Web app for accessing inventory of my favorite you tube videos

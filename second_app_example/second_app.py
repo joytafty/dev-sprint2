@@ -5,7 +5,7 @@ app = flask.Flask(__name__)
 # Don't do this!
 app.secret_key = "bacon"
 
-users = {'juliana':'bacon'}
+users = {'jrimchala':'bacon'}
 
 class Main(flask.views.MethodView):
     def get(self):
@@ -13,17 +13,17 @@ class Main(flask.views.MethodView):
     
     def post(self):
         if 'logout' in flask.request.form:
-            flask.session.pop('username', None)
+            flask.session.pop('usr', None)
             return flask.redirect(flask.url_for('index'))
-        required = ['username', 'passwd']
+        required = ['usr', 'pswd']
         for r in required:
             if r not in flask.request.form:
                 flask.flash("Error: {0} is required.".format(r))
                 return flask.redirect(flask.url_for('index'))
-        username = flask.request.form['username']
-        passwd = flask.request.form['passwd']
+        username = flask.request.form['usr']
+        passwd = flask.request.form['pswd']
         if username in users and users[username] == passwd:
-            flask.session['username'] = username
+            flask.session['usr'] = username
         else:
             flask.flash("Username doesn't exist or incorrect password")
         return flask.redirect(flask.url_for('index'))
@@ -31,7 +31,7 @@ class Main(flask.views.MethodView):
 def login_required(method):
     @functools.wraps(method)
     def wrapper(*args, **kwargs):
-        if 'username' in flask.session:
+        if 'usr' in flask.session:
             return method(*args, **kwargs)
         else:
             flask.flash("A login is required to see the page!")
