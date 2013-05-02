@@ -1,2 +1,7 @@
 # Please put answers for the week2 stand alone questions here
-# Name:
+# Name: Tharathorn (Joy) Rimchala
+
+# Ex 6.8.1
+# What happens if you call 'middle' with a string with two, one, no letters 
+# 
+# 
