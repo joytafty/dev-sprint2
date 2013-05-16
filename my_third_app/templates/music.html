@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block body %}
     <h2>Music</h2>
+    <p>Music:</p>
     <!-- Audio player -->
-    <audio controls="controls" autoplay="autoplay"><audio/>
+    <audio controls="controls" autoplay="autoplay"></audio>
 
     <!-- List all songs -->
     <ul>
         {% for song in songs %}
         <li>
-            <a  onclick="playSong('{{song}}')" href="javascript:void(0);">{{song}}
-            </a>
+            <a onclick="playSong('{{song}}')" href="javascript:void(0);">{{song}}</a>
         </li>
         {% endfor %}
     </ul>
@@ -26,7 +26,7 @@
     {% endwith %}
     <script type="text/javascript">
         function playSong(song){
-            $('audio').attr('src', 'static/music/'+song);
+            $('audio').attr('src','/static/music/'+song);
         }
     </script>
 {% endblock %}
